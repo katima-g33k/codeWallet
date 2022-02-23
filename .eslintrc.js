@@ -1,8 +1,24 @@
 module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
   root: true,
-  extends: '@react-native-community',
+  extends: [
+    '@react-native-community',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
